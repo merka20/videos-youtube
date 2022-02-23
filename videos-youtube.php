@@ -77,6 +77,5 @@ if (!function_exists('MK20_VA_load_plugin_textdomain')) {
 	}
 	add_action('plugins_loaded', 'MK20_VA_load_plugin_textdomain');
 }
+echo '<div class="youtube-player" data-id="0GvLP2C2w9U"></div>';
 ?>
-
-<div class="youtube-player" data-id="0GvLP2C2w9U"></div>
