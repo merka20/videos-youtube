@@ -38,7 +38,8 @@
 }
 
 .youtube-player img:hover {
-  -webkit-filter: brightness(75%);
+  -webkit-filter: brightness(75%); /* Chrome, Safari, Opera antiguas */
+  filter: brightness(75%);         /* Propiedad estándar para navegadores modernos */
 }
 
 .youtube-player .play {
@@ -49,6 +50,6 @@
   margin-left: -36px;
   margin-top: -36px;
   position: absolute;
-  background: url("https://i.imgur.com/TxzC70f.png") no-repeat;
+  background: url("../img/TxzC70f.png") no-repeat;
   cursor: pointer;
 }

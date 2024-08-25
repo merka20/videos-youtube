@@ -25,13 +25,32 @@ if (!defined('WP_UNINSTALL_PLUGIN')) {
   exit;
 }
 
+  /*global $wpdb;
 
+  $tableArray = [
+      $wpdb->prefix . 'va_video_id',
+  ];
+
+  foreach ($tableArray as $tablename) {
+      // Escapando el nombre de la tabla para mayor seguridad
+      $safe_table_name = esc_sql($tablename);
+
+      // Ejecutando la consulta para eliminar la tabla de manera segura
+      $wpdb->query($wpdb->prepare(("DROP TABLE IF EXISTS {$safe_table_name}")));
+  }*/
+
+// Función de desinstalación
 global $wpdb;
+
+// Define the tables to delete
 $tableArray = [
-  $wpdb->prefix . 'va_video_id',  
+    $wpdb->prefix . 'va_video_id',
 ];
 
 foreach ($tableArray as $tablename) {
-
-  $wpdb->query("DROP TABLE IF EXISTS $tablename");
+    // Prepare the SQL query using placeholders
+    //$sql = $wpdb->prepare("DROP TABLE IF EXISTS %s", $tablename);
+    
+    // Execute the query
+    $wpdb->query($wpdb->prepare("DROP TABLE IF EXISTS %s", $tablename));
 }
